@@ -16,12 +16,15 @@
 PRODUCT_COPY_FILES += device/oneplus/bacon/apns-full-conf.xml:system/etc/apns-conf.xml
 
 # Inherit common telephony configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+# Inherit some common Nitrogen OS stuff.
+$(call inherit-product, vendor/nitrogen/products/common.mk)
 
 # Inherit from bacon device
 $(call inherit-product, device/oneplus/bacon/bacon.mk)
 
-PRODUCT_NAME := aosp_bacon
+PRODUCT_NAME := nitrogen_bacon
 PRODUCT_DEVICE := bacon
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_MODEL := A0001
